@@ -97,3 +97,10 @@ function truncateString(str, num) {
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+// 9 - FINDERS KEEPERS
+function findElement(arr, func) {
+  return arr.find(func);
+}
+
+findElement([1, 2, 3, 4], (num) => num % 2 === 0);
