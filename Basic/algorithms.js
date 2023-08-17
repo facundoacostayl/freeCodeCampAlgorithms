@@ -111,3 +111,16 @@ function booWho(bool) {
 }
 
 booWho(null);
+
+// 11 - TITLE CASE A SENTENCE
+function titleCase(str) {
+  const lowerStr = str.toLowerCase();
+  const splittedLowerStr = lowerStr.split(" ");
+  const newStrArr = splittedLowerStr.map((word) => {
+    return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
+  });
+  const newStr = newStrArr.join(" ");
+  return newStr;
+}
+
+titleCase("I'm a little tea pot");
