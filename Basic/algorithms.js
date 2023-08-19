@@ -134,3 +134,10 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// 13 - FALSY BOUNCER
+function bouncer(arr) {
+  return arr.filter((val) => !!val);
+}
+
+bouncer([7, "ate", "", false, 9]);
