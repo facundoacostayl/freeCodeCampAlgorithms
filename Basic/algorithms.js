@@ -141,3 +141,15 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
+
+// 14 - WHERE DO I BELONG
+function getIndexToIns(arr, num) {
+  const sortedArr = arr.sort((a, b) => a - b);
+  const theIndex = sortedArr.indexOf(sortedArr.find((val) => val >= num));
+  if (theIndex === -1) {
+    return sortedArr.length;
+  }
+  return theIndex;
+}
+
+getIndexToIns([2, 5, 10], 15);
