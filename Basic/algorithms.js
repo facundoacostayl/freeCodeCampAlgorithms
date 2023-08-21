@@ -153,3 +153,24 @@ function getIndexToIns(arr, num) {
 }
 
 getIndexToIns([2, 5, 10], 15);
+
+// 15 - MUTATIONS
+function mutation(arr) {
+  let itContains = true;
+
+  arr[1]
+    .toLowerCase()
+    .split("")
+    .every((letter) => {
+      if (!arr[0].toLowerCase().includes(letter)) {
+        itContains = false;
+        return itContains;
+      }
+
+      return itContains;
+    });
+
+  return itContains;
+}
+
+mutation(["hello", "hey"]);
