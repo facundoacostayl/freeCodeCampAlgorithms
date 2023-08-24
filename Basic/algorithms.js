@@ -174,3 +174,18 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
+
+// 16 - CHUNKY MONKEY
+function chunkArrayInGroups(arr, size) {
+  const arrClone = arr;
+  const newArr = [];
+  const divideTimes = Math.ceil(arr.length / size);
+
+  for (let i = 1; i <= divideTimes; i++) {
+    newArr.push(arrClone.splice(0, size));
+  }
+
+  return newArr;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
