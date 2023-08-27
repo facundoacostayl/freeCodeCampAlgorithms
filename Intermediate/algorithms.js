@@ -31,3 +31,21 @@ function diffArray(arr1, arr2) {
 }
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+// 3 - SEEK AND DESTROY
+function destroyer(arr) {
+  const newArr = [];
+  const argsLength = arguments.length - 1;
+  let flag = false;
+  arr.forEach((val) => {
+    for (let i = 1; i <= argsLength; i++) {
+      if (val == arguments[i]) return;
+      flag = true;
+    }
+    if (flag) newArr.push(val);
+  });
+
+  return newArr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
