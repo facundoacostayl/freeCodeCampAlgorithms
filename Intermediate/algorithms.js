@@ -49,3 +49,34 @@ function destroyer(arr) {
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// 5 - SPINAL TAP CASE
+function spinalCase(str) {
+  const splittedStr = str.split("");
+  let spinalStr = "";
+
+  //Logic
+
+  splittedStr.unshift(splittedStr.shift().toLowerCase());
+
+  splittedStr.forEach((letter) => {
+    if (letter === "-" || letter === "_" || letter === " ") {
+      letter = " ";
+      spinalStr += letter;
+      return;
+    }
+
+    if (
+      letter === letter.toUpperCase() &&
+      spinalStr[spinalStr.length - 1] != " "
+    ) {
+      spinalStr += " ";
+    }
+
+    spinalStr += letter.toLowerCase();
+  });
+
+  return spinalStr.split(" ").join("-");
+}
+
+spinalCase("This Is Spinal Tap");
