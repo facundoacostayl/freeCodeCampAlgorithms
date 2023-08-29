@@ -80,3 +80,37 @@ function spinalCase(str) {
 }
 
 spinalCase("This Is Spinal Tap");
+
+// 6 - PIG LATIN
+function translatePigLatin(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let newStr = "";
+  const splittedNewStr = str.split("");
+
+  vowels.forEach((letter) => {
+    if (str[0] == letter) {
+      newStr = str + "way";
+    }
+  });
+
+  if (newStr != "") return newStr;
+
+  let nextVowelIndex = str.length;
+
+  vowels.forEach((letter) => {
+    const splittedStr = str.split("");
+    splittedStr.shift();
+    const vowelIndex = splittedStr.findIndex((val) => val == letter);
+    if (vowelIndex < nextVowelIndex && vowelIndex > -1) {
+      nextVowelIndex = vowelIndex;
+    }
+  });
+
+  const firstCluster = splittedNewStr.splice(0, nextVowelIndex + 1);
+  splittedNewStr.push(...firstCluster);
+  newStr = splittedNewStr.join("") + "ay";
+
+  return newStr;
+}
+
+translatePigLatin("glove");
