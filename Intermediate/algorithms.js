@@ -114,3 +114,21 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("glove");
+
+// 7 - SEARCH AND REPLACE
+function myReplace(str, before, after) {
+  const arrStr = str.split(" ");
+  const bfIndex = arrStr.findIndex((value) => value === before);
+
+  if (before[0] == before[0].toUpperCase()) {
+    after = after.charAt(0).toUpperCase() + after.slice(1);
+  } else {
+    after = after.charAt(0).toLowerCase() + after.slice(1);
+  }
+
+  arrStr.splice(bfIndex, 1, after);
+
+  return arrStr.join(" ");
+}
+
+myReplace("Let us go to the store", "store", "mall");
