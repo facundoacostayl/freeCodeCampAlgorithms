@@ -132,3 +132,28 @@ function myReplace(str, before, after) {
 }
 
 myReplace("Let us go to the store", "store", "mall");
+
+// 8 - MISSING LETTERS
+function fearNotLetter(str) {
+  const arrStr = str.split("");
+  let nextLetter = str[0];
+  let focusIndex;
+  let newStr = "";
+
+  arrStr.forEach((val) => {
+    if (val != nextLetter) {
+      focusIndex = arrStr.indexOf(val);
+      return;
+    }
+
+    nextLetter = String.fromCharCode(val.charCodeAt(0) + 1);
+    if (nextLetter == "{") {
+      nextLetter = undefined;
+      return;
+    }
+  });
+
+  return nextLetter;
+}
+
+fearNotLetter("abcdefghijklmnopqrstuvwxyz");
